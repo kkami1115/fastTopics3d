@@ -4,16 +4,16 @@ fastTopics ( https://github.com/stephenslab/fastTopics )'s structure_plot mapped
 
 ### Files
  - fig.html   
-       fastTopics's structure_plot with x,y coordinates as t-SNE result
+       fastTopics's structure_plot with x,y coordinates as t-SNE result.
 
  - structure_plot.[png/pdf]   
-       fastTopics structure_plot output.
+       fastTopics structure_plot outputs.
 
  - tsne_plot.[png/pdf]    
-       t-SNE results
+       t-SNE results.
 
  - fastTopics3D_attempt.R   
-       R code used to create the figure
+       R code used to create the figure.
     
     
 ### To-Do
