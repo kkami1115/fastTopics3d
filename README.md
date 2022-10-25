@@ -17,6 +17,7 @@ fastTopics ( https://github.com/stephenslab/fastTopics )'s structure_plot mapped
     
     
 ### To-Do
+- Change plotly to rgl[https://cran.r-project.org/web/packages/rgl/index.html] or rayshader[https://www.rayshader.com/]
 - Place t-SNE result at z=1 in 3D space
-- Change to graphs other than scatter plot
+- Change to graphs other than scatter plot -> stacked bar plot
 - Search the correlation between trajectory analysis and k1~k6 differential coefficients
