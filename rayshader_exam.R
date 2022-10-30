@@ -1,4 +1,4 @@
-pacman::p_load(rayshader)
+pacman::p_load(rayshader, tidyverse, ggplot2)
 
 
 #First, create simulated lat/long data
@@ -38,3 +38,13 @@ render_path(extent = attr(montereybay,"extent"),
             altitude = 10, zscale=50, color="black", antialias=TRUE)
 render_camera(theta=30,phi=35,zoom=0.45,fov=70)
 render_snapshot()
+
+
+
+## ggplot with rayshader
+rgl::clear3d()
+
+plotTSNE(sce.sperm, colour_by="pseudotime", point_alpha=0.3) 
+plot_gg(gg,multicore=TRUE,width=5,height=5,scale=1) 
+render_snapshot()
+htmlwidgets::saveWidget(rgl::rglwidget(), "tmp.html")
