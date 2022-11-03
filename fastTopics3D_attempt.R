@@ -75,4 +75,4 @@ fig <- fig %>% plotly::add_markers(x = ~x_data, y = ~y_data, z = ~z_data1+z_data
 
 fig
 
-saveWidget(fig, "fig.html", selfcontained = TRUE, title = "fastTopics in 3D")
+saveWidget(fig, "3dscatterplot.html", selfcontained = TRUE, title = "fastTopics in 3D")

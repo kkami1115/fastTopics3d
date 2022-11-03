@@ -18,13 +18,6 @@ library(dplyr)
 # Map fastTopics results onto t-SNE plot in 3D
 x_data = tsne_plot$data$X
 y_data = tsne_plot$data$Y
-z_data1 = fit$L[,1]
-z_data2 = fit$L[,1] + fit$L[,2] 
-z_data3 = fit$L[,1] + fit$L[,2] + fit$L[,3]
-z_data4 = fit$L[,1] + fit$L[,2] + fit$L[,3] + fit$L[,4]
-z_data5 = fit$L[,1] + fit$L[,2] + fit$L[,3] + fit$L[,4] + fit$L[,5]
-z_data6 = fit$L[,1] + fit$L[,2] + fit$L[,3] + fit$L[,4] + fit$L[,5] + fit$L[,6]
-
 
 df = NULL
 for(i in 1:6){
@@ -48,6 +41,6 @@ p <- ggplot(df_3d) +
       scale_colour_viridis_c(option = 'A') +
       coord_equal()
 
-devoutrgl::rgldev(fov = 30, view_angle = -30, zscale = 3.5)
+devoutrgl::rgldev(fov = 30, view_angle = -30, zscale = 3.5, filename = "3dbarplot.html", show_window = FALSE)
 p
 invisible(dev.off())
