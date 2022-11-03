@@ -7,6 +7,7 @@ remotes::install_github('coolbutuseless/snowcrash')
 remotes::install_github('coolbutuseless/cryogenic')
 remotes::install_github('coolbutuseless/ggrgl', ref='main')
 
+
 library(rgl)
 library(devout)
 library(devoutrgl)
@@ -40,11 +41,10 @@ df_3d = bind_rows(df)
 
 p <- ggplot(df_3d) +
       geom_segment_3d(
-        aes( x = x, y = y, z = z, xend = xend, yend = yend, zend = zend, colour = zend),
-        alpha = 0.1,
-        size = 2) +
+        aes( x = x, y = y, z = z, xend = xend, yend = yend, zend = zend, colour = cluster),
+        alpha = 0.2,
+        size = 4) +
       theme_ggrgl() +
-      theme(legend.position = 'none') +
       scale_colour_viridis_c(option = 'A') +
       coord_equal()
 
