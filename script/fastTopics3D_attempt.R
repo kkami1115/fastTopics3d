@@ -47,8 +47,13 @@ ggsave(filename = "plot_2d/tsne_plot.pdf", width = 9, height = 9)
 # Calculate NMF and draw structure plot (copied from fastTopics vignette)
 rawcounts <- t(exp(as.matrix(SingleCellExperiment::logcounts(sce.sperm))))
 fit <- fit_topic_model(rawcounts, k = 6)
+bench = microbenchmark::microbenchmark("BENCH" = fit_topic_model(rawcounts, k = 6), times = 1)
+# netlib blas:Unit: seconds
+#             expr    min     lq   mean median     uq    max neval
+#             BENCH 8048.4 8048.4 8048.4 8048.4 8048.4 8048.4     1
+# openblas: 
 samples <- sce.sperm$celltype
-topic_colors <- c("skyblue","forestgreen","darkmagenta","dodgerblue","gold","darkorange")
+topic_colors <- c("skyblue","forestgreen","magenta","darkblue","gold","darkorange")
 str_plot <- structure_plot(fit,colors = topic_colors,topics = 1:6,gap = 25,
                            grouping = samples)
 str_plot
